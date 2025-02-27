@@ -1,6 +1,6 @@
 ---
 title: "Dataframes - In Class lab"
-author: "Dr. Shoemaker"
+author: "Eric Lombrana"
 date: "DATA 2401"
 output: html_document
 ---
@@ -19,7 +19,7 @@ Use the `read.csv()` function to read the data from the `gates_donations.csv` fi
 ## if you save it in the same folder as this file this should work. 
 ## But you may need edit the string to reflect the actual file name: 
 
-grants <- read_csv("gates_donations.csv")
+grants <- read_csv('gates_donations.csv')
 
 
 head(grants)
@@ -31,6 +31,7 @@ Because you're in an RProject, you don't need to set your working directory in R
 
 ```{r}
 
+glimpse(grants)
 
 ```
 
@@ -39,6 +40,7 @@ Because you're in an RProject, you don't need to set your working directory in R
 
 ```{r}
 
+org<- grants$organization
 
 ```
 
@@ -47,6 +49,7 @@ Because you're in an RProject, you don't need to set your working directory in R
 
 ```{r}
 
+is.vector(grants$organization)
 
 ```
 
@@ -56,6 +59,7 @@ Now you can ask some interesting questions about the dataset:
 - What was the mean grant value?
 
 ```{r}
+mean(grants$total_amount)
 
 ```
 
@@ -63,6 +67,8 @@ Now you can ask some interesting questions about the dataset:
 - What was the dollar amount of the largest grant?
 
 ```{r}
+max(grants$total_amount)
+
 
 ```
 
@@ -70,6 +76,7 @@ Now you can ask some interesting questions about the dataset:
 - What was the dollar amount of the smallest grant?
 
 ```{r}
+min(grants$total_amount)
 
 ```
 
@@ -78,6 +85,7 @@ Now you can ask some interesting questions about the dataset:
 
 ```{r}
 
+max(grants$organization)
 
 ```
 
@@ -85,6 +93,7 @@ Now you can ask some interesting questions about the dataset:
 - Which organization received the smallest grant?
 
 ```{r}
+min(grants$organization)
 
 ```
 
@@ -92,11 +101,15 @@ Now you can ask some interesting questions about the dataset:
 
 ```{r}
 
+nrow(grants)
+
 ```
 
 - How much was awarded in 2010? 
 
 ```{r}
+
+sum(grants$total_amount)
 
 ```
 
